@@ -30,15 +30,18 @@ function onLineWidthChange(event) {
     ctx.lineWidth = event.target.value;
 }
 
+function changeAllColor(color) {
+    ctx.strokeStyle = color;
+    ctx.fillStyle = color;
+}
+
 function onColorChange(event) {
-    ctx.strokeStyle = event.target.value;
-    ctx.fillStyle = event.target.value;
+    changeAllColor(event.target.value);
 }
 
 function onColorClick(event) {
     const colorValue = event.target.dataset.color;
-    ctx.strokeStyle = colorValue;
-    ctx.fillStyle = colorValue;
+    changeAllColor(colorValue);
     color.value = colorValue;
 }
 
